@@ -11,6 +11,8 @@ namespace authservice.src.BackgroundServices
 {
     public class TokenCleanupBackgroundService : BackgroundService
     {
+        /* This code snippet is defining a C# class called `TokenCleanupBackgroundService` that extends
+        `BackgroundService`. */
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<TokenCleanupBackgroundService> _logger;
 
@@ -22,6 +24,13 @@ namespace authservice.src.BackgroundServices
             _logger = logger;
         }
 
+        /// <summary>
+        /// This C# function is an asynchronous background service that cleans up expired tokens at
+        /// hourly intervals.
+        /// </summary>
+        /// <param name="CancellationToken">A CancellationToken is a structure that is used to propagate
+        /// notification that operations should be canceled. It can be used to request that an operation
+        /// be canceled.</param>
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("Token Cleanup Background Service is starting.");

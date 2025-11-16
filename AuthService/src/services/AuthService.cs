@@ -18,6 +18,10 @@ namespace AuthService.src.Service
 {
     public class AuthService : IAuthService
     {
+        /* This code snippet is defining a constructor for the `AuthService` class in C#. The
+        constructor takes four parameters: `HttpClient httpClient`, `ITokenService tokenService`,
+        `IConfiguration configuration`, and `IMemoryCache cache`. These parameters are then assigned
+        to the corresponding private readonly fields within the class. */
         private readonly HttpClient _httpClient;
         private readonly ITokenService _tokenService;
         private readonly IConfiguration _configuration;
