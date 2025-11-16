@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using authservice.src.Service;
 using authservice.src.BackgroundServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Logging.ClearProviders();
