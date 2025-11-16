@@ -14,6 +14,10 @@ namespace AuthService.src.Service
 {
     public class TokenService : ITokenService
     {
+        /* This part of the code defines a class named `TokenService` that implements the
+        `ITokenService` interface. Within this class, the constructor `TokenService` takes an
+        `IConfiguration` object as a parameter. The constructor initializes several private readonly
+        fields: */
         private readonly IConfiguration _configuration;
         private readonly string _jwtSecret;
         private readonly string _issuer;

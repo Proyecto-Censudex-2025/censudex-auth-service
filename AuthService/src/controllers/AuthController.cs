@@ -71,8 +71,16 @@ namespace AuthService.src.Controller
         }
 
         /// <summary>
-        /// Logout endpoint that adds the current JWT token to the blocklist.
+        /// This C# function handles the logout process by extracting a token from the Authorization
+        /// header, parsing it, adding it to a blocklist, and returning appropriate responses based on
+        /// the outcome.
         /// </summary>
+        /// <returns>
+        /// The `Logout` method returns an `ActionResult` which can be either an `OkObjectResult` with a
+        /// success message if the logout was successful, a `BadRequestObjectResult` if the token is not
+        /// found, or a `StatusCodeResult` with status code 500 and an error message if there was a
+        /// failure during the logout process.
+        /// </returns>
         [HttpPost("logout")]
         [AllowAnonymous]
         public async Task<ActionResult> Logout()
@@ -110,9 +118,13 @@ namespace AuthService.src.Controller
         }
 
         /// <summary>
-        /// Validate token endpoint for API Gateway to verify JWT tokens.
-        /// Checks both token validity and blocklist status.
+        /// This C# function validates a token extracted from the Authorization header, checks if it is
+        /// blocked, and then validates it using an authentication service, returning the validation
+        /// result with claims if successful.
         /// </summary>
+        /// <returns>
+        /// The `ValidateToken` method returns different responses based on the validation of the token:
+        /// </returns>
         [HttpGet("validate")]
         [AllowAnonymous]
         public async Task<ActionResult> ValidateToken()
@@ -168,6 +180,5 @@ namespace AuthService.src.Controller
                 });
             }
         }
-        
     }
 }
